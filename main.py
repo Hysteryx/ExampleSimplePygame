@@ -1,5 +1,4 @@
-from asyncio import events
-import pygame 
+import pygame #import de pygame
 
 win_w = 800 #taille de vôtre fenetre 
 win_h = 800

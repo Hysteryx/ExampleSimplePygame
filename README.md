@@ -6,3 +6,6 @@
 
 - Requierements : pygame 
 - pip install pygame (ou : python -m pip install pygame              si cela ne fonctionne pas)
+
+
+-Hysteryx 
