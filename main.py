@@ -1,33 +1,33 @@
 from asyncio import events
 import pygame 
 
-win_w = 800
+win_w = 800 #taille de vôtre fenetre 
 win_h = 800
-title = "Jeu Simple"
-isRunning = True 
+title = "Jeu Simple" #titre 
+isRunning = True #permet à la boucle d'être active (c'est un while donc ça permet aussi de la coupée)
 
-pygame.init()
-screen = pygame.display.set_mode((win_w, win_h))
-pygame.display.set_caption(title)
+pygame.init() 
+screen = pygame.display.set_mode((win_w, win_h)) #création de la fenetre 
+pygame.display.set_caption(title) #ajout du titre 
 
 
 #_src
-image = pygame.image.load("_src/ball.png").convert()
+image = pygame.image.load("_src/ball.png").convert()  #ajout de l'image 
 
-x = 0 
+x = 0 # position initiale 
 y = 0 
-speed = 5 
+speed = 5 #vitesse initiale 
 
-clock = pygame.time.Clock()
+clock = pygame.time.Clock() #fps 
 
 while isRunning:
-    for event in pygame.event.get():
+    for event in pygame.event.get(): #recupere les event en cours 
         if event.type == pygame.QUIT:
             isRunning = False 
 
-    pressed = pygame.key.get_pressed()
+    pressed = pygame.key.get_pressed() #recupere les touches actuellement préssée 
     if pressed[pygame.K_LEFT]:
-        if x > 0:
+        if x > 0:   #vérification que la balle n'est pas contre les bordure ou au délà 
             x -= speed
     if pressed[pygame.K_RIGHT]:
         if x < win_w-100:
@@ -45,10 +45,10 @@ while isRunning:
         if speed > 1:
             speed -= 0.1
 
-    screen.fill((0,0,0))
+    screen.fill((0,0,0)) #arriere plan 
     screen.blit(image, (x,y))
-    pygame.display.flip()
-    clock.tick(60)
+    pygame.display.flip() #actualisation 
+    clock.tick(60) #fps max 
 
         
 
