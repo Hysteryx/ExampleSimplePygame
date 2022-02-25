@@ -17,7 +17,7 @@ x = 0 # position initiale
 y = 0 
 speed = 5 #vitesse initiale 
 
-clock = pygame.time.Clock() #fps 
+fps = pygame.time.Clock() #fps 
 
 while isRunning:
     for event in pygame.event.get(): #recupere les event en cours 
@@ -47,7 +47,7 @@ while isRunning:
     screen.fill((0,0,0)) #arriere plan 
     screen.blit(image, (x,y))
     pygame.display.flip() #actualisation 
-    clock.tick(60) #fps max 
+    fps.tick(60) #fps max 
 
         
 
